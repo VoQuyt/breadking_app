@@ -114,17 +114,22 @@ class DetailScreen extends StatelessWidget {
         ),
         const SizedBox(width: 20),
         Expanded(
-          child: BreDecorationBox(
-            width: Navigation.size.width,
-            color: BreColor.colorBlack,
-            onPressed: () => Navigation.goto(CartScreen(toppings: toppings)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.shopping_cart, size: 30, color: BreColor.colorBrownDark),
-                const SizedBox(width: 10),
-                const Text('Go To Cart', style: TextStyle(fontSize: 16, color: Colors.white))
-              ],
+          child: Hero(
+            tag: 'checkoutcart',
+            child: Material(
+              child: BreDecorationBox(
+                width: Navigation.size.width,
+                color: BreColor.colorBlack,
+                onPressed: () => Navigation.goto(CartScreen(toppings: toppings)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.shopping_cart, size: 30, color: BreColor.colorBrownDark),
+                    const SizedBox(width: 10),
+                    const Text('Go To Cart', style: TextStyle(fontSize: 16, color: Colors.white))
+                  ],
+                ),
+              ),
             ),
           ),
         ),

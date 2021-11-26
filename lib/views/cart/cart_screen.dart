@@ -78,7 +78,9 @@ class _CartScreenState extends State<CartScreen> {
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: _buildCheckoutButton(),
+                child: Hero(
+                  tag: 'checkoutcart',
+                  child: Material(child: _buildCheckoutButton())),
               )
             ],
           ),
@@ -125,7 +127,7 @@ class _CartScreenState extends State<CartScreen> {
     );
   }
 
-  _buildCheckoutButton() {
+  Widget _buildCheckoutButton() {
     return BreDecorationBox(
       onPressed: () => Navigation.backUntilTo(const HomeScreen()),
       width: Navigation.size.width,

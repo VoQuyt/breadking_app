@@ -41,8 +41,10 @@ class _MoreRestaurantListState extends State<MoreRestaurantList> {
           children: [
             const Hero(
               tag: 'morerestaurants',
-              child: Text('More restaurants',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+              child: Material(
+                child: Text('More restaurants',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+              ),
             ),
             GestureDetector(
               onTap: () => Navigation.goto(
